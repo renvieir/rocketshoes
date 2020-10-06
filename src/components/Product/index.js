@@ -2,9 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { MdAddShoppingCart } from 'react-icons/md'
 
-import { addToCart } from '../../store/cart/actions'
+import { addToCartRequest } from '../../store/cart/actions'
 
-function Product ({ ammount=0, product, dispatchAddProduct }) {
+function Product ({ amount=0, product, addToCart }) {
   const { image, title, priceFormatted } = product;
 
   return (
@@ -14,11 +14,11 @@ function Product ({ ammount=0, product, dispatchAddProduct }) {
       <span>{priceFormatted}</span>
       <button type="button"
         onClick={
-          () => dispatchAddProduct(product)
+          () => addToCart(product.id)
         }
       >
         <div>
-          <MdAddShoppingCart size={16} color="#fff" /> {ammount}
+          <MdAddShoppingCart size={16} color="#fff" /> {amount}
         </div>
         <span>ADICIONAR AO CARRINHO</span>
       </button>
@@ -27,7 +27,7 @@ function Product ({ ammount=0, product, dispatchAddProduct }) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  dispatchAddProduct: product => dispatch(addToCart(product))
+  addToCart: product => dispatch(addToCartRequest(product))
 })
 
 export default connect(null, mapDispatchToProps)(Product)

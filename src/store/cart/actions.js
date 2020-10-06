@@ -1,8 +1,17 @@
-export const ADD_TO_CART = '@cart/ADD'
-export const addToCart = product => ({ type: ADD_TO_CART, product })
+export const ADD_TO_CART_REQUEST = '@cart/ADD_REQUEST'
+export const addToCartRequest = id => ({ type: ADD_TO_CART_REQUEST, id })
+
+export const ADD_TO_CART_SUCCESS = '@cart/ADD_SUCCESS'
+export const addToCartSuccess = product => ({ type: ADD_TO_CART_SUCCESS, product })
 
 export const REMOVE_FROM_CART = '@cart/REMOVE'
 export const removeFromCart = id => ({ type: REMOVE_FROM_CART, id })
 
-export const UPDATE_AMMOUNT = '@cart/UPDATE_AMMOUNT'
-export const updateAmmount = (id, ammount)=> ({ type: UPDATE_AMMOUNT, id, ammount })
+export const UPDATE_AMOUNT_REQUEST = '@cart/UPDATE_AMOUNT_REQUEST'
+export const updateAmountRequest = (id, amount)=> ({ type: UPDATE_AMOUNT_REQUEST, id, amount })
+
+export const UPDATE_AMOUNT_SUCCESS = '@cart/UPDATE_AMOUNT_SUCCESS'
+export const updateAmountSuccess = (id, amount)=> ({ type: UPDATE_AMOUNT_SUCCESS, id, amount })
+
+export const UPDATE_AMOUNT_FAIL = '@cart/UPDATE_AMOUNT_FAIL'
+export const updateAmountFail = (id, amount)=> ({ type: UPDATE_AMOUNT_FAIL, id, amount })

@@ -44,10 +44,10 @@ function Cart({ cart, total }) {
 const mapStateToProps = state => ({
   cart: state.cart.map(product => ({
     ...product,
-    subTotal: formatPrice(product.price * product.ammount)
+    subTotal: formatPrice(product.price * product.amount)
   })),
   total: formatPrice(state.cart.reduce(
-    (sum, product) => sum + (product.price * product.ammount), 0))
+    (sum, product) => sum + (product.price * product.amount), 0))
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators(CartActions, dispatch)

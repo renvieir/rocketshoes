@@ -7,7 +7,7 @@ import { formatPrice } from '../../util/format'
 
 import Product from '../../components/Product'
 
-function Home({ammount}) {
+function Home({amount}) {
   const [products, setProducts] = useState([])
 
   useEffect(()=>{
@@ -30,7 +30,7 @@ function Home({ammount}) {
           <Product
             key={product.id}
             product={product}
-            ammount={ammount[product.id]}
+            amount={amount[product.id]}
           />
         )
       })}
@@ -39,9 +39,9 @@ function Home({ammount}) {
 }
 
 const mapStateToProps = state => ({
-  ammount: state.cart.reduce((ammount, product) => {
-    ammount[product.id] = product.ammount
-    return ammount
+  amount: state.cart.reduce((amount, product) => {
+    amount[product.id] = product.amount
+    return amount
   }, {})
 })
 

@@ -5,8 +5,8 @@ import { MdRemoveCircleOutline, MdAddCircleOutline, MdDelete } from 'react-icons
 
 import * as CartActions from '../../store/cart/actions'
 
-function CartItem({ product, removeFromCart, updateAmmount }) {
-  const { priceFormatted, subTotal, title, image, ammount } = product
+function CartItem({ product, removeFromCart, updateAmountRequest }) {
+  const { priceFormatted, subTotal, title, image, amount } = product
 
   return (
     <tr>
@@ -20,13 +20,13 @@ function CartItem({ product, removeFromCart, updateAmmount }) {
       <td>
         <div>
           <button type="button"
-            onClick={() => updateAmmount(product.id, ammount-1)}
+            onClick={() => updateAmountRequest(product.id, -1)}
           >
             <MdRemoveCircleOutline size={20} color="#7159c1" />
           </button>
-          <input type="number" readOnly value={ammount} />
+          <input type="number" readOnly value={amount} />
           <button type="button"
-            onClick={() => updateAmmount(product.id, ammount+1)}
+            onClick={() => updateAmountRequest(product.id, +1)}
           >
             <MdAddCircleOutline size={20} color="#7159c1" />
           </button>
