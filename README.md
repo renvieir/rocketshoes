@@ -11,3 +11,10 @@
 ### Starting react app
 
 `yarn start`
+
+### Libraries
+
+- React
+- Redux
+- Redux-Saga
+- Styled Components
