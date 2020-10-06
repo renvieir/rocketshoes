@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import { MdAddShoppingCart } from 'react-icons/md'
 
 import { addToCartRequest } from '../../store/cart/actions'
+import { Container } from './styles'
 
 function Product ({ amount=0, product, addToCart }) {
   const { image, title, priceFormatted } = product;
 
   return (
-    <li>
+    <Container>
       <img src={image} alt={title} />
       <strong>{title}</strong>
       <span>{priceFormatted}</span>
@@ -22,7 +23,7 @@ function Product ({ amount=0, product, addToCart }) {
         </div>
         <span>ADICIONAR AO CARRINHO</span>
       </button>
-    </li>
+    </Container>
   )
 }
 

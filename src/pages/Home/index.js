@@ -7,11 +7,11 @@ import { formatPrice } from '../../util/format'
 
 import Product from '../../components/Product'
 
-function Home({amount}) {
+function Home({ amount }) {
   const [products, setProducts] = useState([])
 
   useEffect(()=>{
-    async function fetchData() {
+    async function fetchProducts() {
       const { data } = await api.get('/products')
       data.forEach(product => {
         product.priceFormatted = formatPrice(product.price)
@@ -19,7 +19,7 @@ function Home({amount}) {
       setProducts(data)
     }
 
-    fetchData();
+    fetchProducts();
   },[])
 
 

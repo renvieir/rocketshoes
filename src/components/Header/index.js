@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import { MdShoppingBasket } from 'react-icons/md'
@@ -8,7 +8,8 @@ import { Container, Cart } from './styles'
 
 import logo from '../../assets/images/logo.svg'
 
-function Header ({ cart }) {
+export default function Header () {
+  const cart = useSelector(state => state.cart)
   const cartSize = useMemo(() => cart.length, [cart])
   return (
     <Container>
@@ -26,9 +27,3 @@ function Header ({ cart }) {
     </Container>
   )
 }
-
-const mapStateToProps = state => ({
-  cart: state.cart
-})
-
-export default connect(mapStateToProps)(Header)
