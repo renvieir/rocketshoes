@@ -10,12 +10,9 @@ export default (state = [], action) => {
       ]
     case CartActions.REMOVE_FROM_CART:
       return state.filter(p => p.id !== action.id)
-    case CartActions.UPDATE_AMOUNT_FAIL:
-      console.warn('out of stock')
-      return state
     case CartActions.UPDATE_AMOUNT_SUCCESS: {
       return state.map(product => {
-        if (product => product.id === action.id) {
+        if (product.id === action.id) {
           product.amount = action.amount
         }
         return product

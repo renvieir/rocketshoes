@@ -20,13 +20,13 @@ function CartItem({ product, removeFromCart, updateAmountRequest }) {
       <td>
         <div>
           <button type="button"
-            onClick={() => updateAmountRequest(product.id, -1)}
+            onClick={() => updateAmountRequest(product.id, amount-1)}
           >
             <MdRemoveCircleOutline size={20} color="#7159c1" />
           </button>
           <input type="number" readOnly value={amount} />
           <button type="button"
-            onClick={() => updateAmountRequest(product.id, +1)}
+            onClick={() => updateAmountRequest(product.id, amount+1)}
           >
             <MdAddCircleOutline size={20} color="#7159c1" />
           </button>

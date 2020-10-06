@@ -12,6 +12,3 @@ export const updateAmountRequest = (id, amount)=> ({ type: UPDATE_AMOUNT_REQUEST
 
 export const UPDATE_AMOUNT_SUCCESS = '@cart/UPDATE_AMOUNT_SUCCESS'
 export const updateAmountSuccess = (id, amount)=> ({ type: UPDATE_AMOUNT_SUCCESS, id, amount })
-
-export const UPDATE_AMOUNT_FAIL = '@cart/UPDATE_AMOUNT_FAIL'
-export const updateAmountFail = (id, amount)=> ({ type: UPDATE_AMOUNT_FAIL, id, amount })
